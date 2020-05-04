@@ -1,0 +1,17 @@
+import pandas as pd
+import ta
+
+# Load data
+df = pd.read_csv('ui.csv', sep=',')
+
+# Clean nan values
+df = ta.utils.dropna(df)
+
+print('roc')
+print(ta.momentum.roc(close=df['close']),40)
+print('-----------------------------------')
+print('rsi')
+print(ta.momentum.rsi(close=df['close']),40)
+print('-----------------------------------')
+print('bollinger_mavg')
+print(ta.volatility.bollinger_mavg(close=df['close']),200)

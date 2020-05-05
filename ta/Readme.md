@@ -15,4 +15,4 @@ same except for the function name.
 
 ##### References
 
-[TA Library](https://technical-analysis-library-in-python.readthedocs.io/en/latest/ta.html)
+[ta library](https://technical-analysis-library-in-python.readthedocs.io/en/latest/ta.html)

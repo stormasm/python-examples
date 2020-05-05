@@ -34,3 +34,7 @@ print('-----------------------------------')
 print('keltner channel lband')
 print(ta.volatility.keltner_channel_lband(high=df['high'],low=df['low'],close=df['close']))
 print('-----------------------------------')
+### Fix Runtime Error
+# print('adx')
+# print(ta.trend.adx(high=df['high'],low=df['low'],close=df['close']))
+# print('-----------------------------------')

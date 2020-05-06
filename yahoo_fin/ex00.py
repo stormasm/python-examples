@@ -5,4 +5,6 @@
 from yahoo_fin.stock_info import get_data, tickers_sp500, tickers_nasdaq, tickers_other, get_quote_table
 
 ui = get_data("UI")
-print(ui)
+print(ui.dtypes)
+print(ui.tail(100))
+ui.to_csv('ui.csv')

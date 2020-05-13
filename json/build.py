@@ -2,12 +2,14 @@
 import os
 import pandas as pd
 
-def get_symbols(dataframe):
-    print(dataframe['Symbol'])
+
+def get_series_array(series):
+    print(series.values)
 
 def process(filename):
     df = pd.read_csv(filename, sep=',')
-    get_symbols(df)
+    symbols_series = df['Symbol']
+    get_series_array(symbols_series)
 
 your_path = '/j/tmp32/python-examples/data/sp500'
 files = os.listdir(your_path)

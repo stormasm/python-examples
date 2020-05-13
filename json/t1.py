@@ -23,12 +23,20 @@ print(t2)
 tup1 = ("apd","avy","bll")
 tup2 = ("atvi","chtr","cmcsa")
 tup3 = ("apa","cog","cop")
+
 d1 = {}
 d2 = {}
 d3 = {}
+
 d1["b"] = tup1
 d2["c"] = tup2
 d3["e"] = tup3
-t = [d1,d2,d3]
+
+#t = [d1,d2,d3]
+t = []
+t.append(d1)
+t.append(d2)
+t.append(d3)
+
 t2 = json.dumps(t)
 print(t2)

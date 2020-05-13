@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 def get_symbols(dataframe):
-    print(dataframe)
+    print(dataframe['Symbol'])
 
 def process(filename):
     df = pd.read_csv(filename, sep=',')

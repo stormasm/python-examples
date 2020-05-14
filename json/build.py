@@ -1,11 +1,12 @@
 import os
 import pandas as pd
 from pathlib import PurePath
+import re
 
 def get_symbol_from_filename(filename):
     pp = PurePath(filename)
-    p1 = pp.parts
-    print(p1[-1])
+    p1 = pp.parts[-1]
+    print(p1)
 
 def process(filename):
     df = pd.read_csv(filename, sep=',')

@@ -40,3 +40,6 @@ t.append(d3)
 
 t2 = json.dumps(t)
 print(t2)
+
+td = json.loads(t2)
+print(td[0]['b'][2])

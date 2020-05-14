@@ -18,9 +18,12 @@ def get_dict(filename):
     df = pd.read_csv(filename, sep=',')
     series = df['Symbol']
     values = series.values
+    # convert strings in array to lowercase
+    vl = map(str.lower, values)
     d = {}
     symbol = get_symbol_from_filename(filename)
-    st = tuple(values)
+    # convert the string array to a string tuple
+    st = tuple(vl)
     d[symbol] = st
     return(d)
 

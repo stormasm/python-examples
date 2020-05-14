@@ -6,7 +6,8 @@ import re
 def get_symbol_from_filename(filename):
     pp = PurePath(filename)
     p1 = pp.parts[-1]
-    print(p1)
+    p2 = re.split("\.",p1)
+    print(p2)
 
 def process(filename):
     df = pd.read_csv(filename, sep=',')

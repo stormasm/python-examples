@@ -26,10 +26,10 @@ def get_dict(filename):
 
 your_path = '/j/tmp32/python-examples/data/sp500'
 files = os.listdir(your_path)
-ja = []
+arr = []
 for file in files:
     filename = os.path.join(your_path, file)
     d = get_dict(filename)
-    ja.append(d)
-t2 = json.dumps(ja)
-print(t2)
+    arr.append(d)
+myj = json.dumps(arr)
+print(myj)

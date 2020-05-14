@@ -1,3 +1,4 @@
+import json
 import os
 import pandas as pd
 from pathlib import PurePath
@@ -13,15 +14,22 @@ def get_symbol_from_filename(filename):
     p3 = re.split("holdings-",p2)[1]
     return(p3)
 
-def process(filename):
+def get_dict(filename):
     df = pd.read_csv(filename, sep=',')
     series = df['Symbol']
     values = series.values
+    d = {}
     symbol = get_symbol_from_filename(filename)
-    print(symbol)
+    st = tuple(values)
+    d[symbol] = st
+    return(d)
 
 your_path = '/j/tmp32/python-examples/data/sp500'
 files = os.listdir(your_path)
+ja = []
 for file in files:
     filename = os.path.join(your_path, file)
-    process(filename)
+    d = get_dict(filename)
+    ja.append(d)
+t2 = json.dumps(ja)
+print(t2)

@@ -1,7 +1,7 @@
 
-sp500.py takes in the csv files from [here](https://www.sectorspdr.com/sectorspdr/sector/xlu/holdings) and creates [this json file](./sp500.json)
+sp500.py takes in the csv files from [here](https://www.sectorspdr.com/sectorspdr/sector/xlu/holdings) and creates **sp500.json**
 
-sp500n.py takes in the csv files from [here](https://www.sectorspdr.com/sectorspdr/sector/xlu/holdings) and creates [this json file](./sp500n.json)
+sp500n.py takes in the csv files from [here](https://www.sectorspdr.com/sectorspdr/sector/xlu/holdings) and creates **sp500n.json**
 
 ```
 py t1.py > t1.json

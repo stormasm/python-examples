@@ -5,6 +5,7 @@ import re
 
 def get_symbol_from_filename(filename):
     pp = PurePath(filename)
+    # get the filename in the path
     p1 = pp.parts[-1]
     # get everything before the dot
     p2 = re.split("\.",p1)[0]

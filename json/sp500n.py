@@ -19,14 +19,14 @@ def get_dict(filename):
     sseries = df['Symbol']
     svalues = sseries.values
     # convert strings in array to lowercase
-    # svl = map(str.lower, svalues)
+    svlc = map(str.lower, svalues)
+    svl = tuple(svlc)
 
     nseries = df['Company Name']
     nvalues = nseries.values
-    # convert strings in array to lowercase
-    # nvl = map(str.lower, nvalues)
+    nvl = tuple(nvalues)
 
-    return(svalues,nvalues)
+    return(svl,nvl)
 
 #your_path = '/j/tmp32/python-examples/data/sp500'
 your_path = '/j/tmp32/equity-data/sp500/groups/200507'

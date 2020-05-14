@@ -27,7 +27,8 @@ def get_dict(filename):
     d[symbol] = st
     return(d)
 
-your_path = '/j/tmp32/python-examples/data/sp500'
+#your_path = '/j/tmp32/python-examples/data/sp500'
+your_path = '/j/tmp32/equity-data/sp500/groups/200507'
 files = os.listdir(your_path)
 arr = []
 for file in files:

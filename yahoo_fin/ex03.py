@@ -4,4 +4,9 @@
 # get any duplication of data...
 top = {"ui","psa","ip","t"}
 top.add("nly")
-print(top)
+
+def build_file_names(top):
+    for val in top:
+        print(val)
+
+build_file_names(top)

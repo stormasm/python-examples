@@ -8,11 +8,13 @@ top.add("nly")
 def get_day():
     x = datetime.datetime.now()
     y = x.strftime("%y-%m-%d")
-    print(y)
+    return y
 
 def build_file_names(top):
     for val in top:
-        print(val)
+        day = get_day()
+        x = f"{val}-fun-{day}"
+        print(x)
 
-#build_file_names(top)
-get_day()
+build_file_names(top)
+#get_day()

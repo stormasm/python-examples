@@ -6,8 +6,9 @@ top = {"ui","psa","ip","t"}
 top.add("nly")
 
 def get_day():
-    now = datetime.datetime.now()
-    print(now)
+    x = datetime.datetime.now()
+    y = x.strftime("%y-%m-%d")
+    print(y)
 
 def build_file_names(top):
     for val in top:

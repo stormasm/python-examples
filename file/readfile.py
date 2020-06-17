@@ -1,3 +1,5 @@
+import os
+
 # This should return a set of symbols
 def get_symbols(filename):
     myset = set()
@@ -8,6 +10,7 @@ def get_symbols(filename):
     return(myset)
 
 if __name__ == "__main__":
-    path = '/j/tmp32/equity-data/symbols/top.txt'
+    path = os.environ['BMTOP']
+    path = path + '/equity-data/symbols/top.txt'
     mysymbols = get_symbols(path)
     print(mysymbols)

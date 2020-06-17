@@ -1,3 +1,4 @@
+import os
 from os import listdir
 from os.path import isfile, join
 
@@ -6,6 +7,7 @@ def getfiles(mypath):
     return(onlyfiles)
 
 if __name__ == "__main__":
-    path1 = '/j/tmp32/bluemesa/tmp'
-    myfiles = getfiles(path1)
+    path = os.environ['BMTOP']
+    path = path + '/bluemesa/tmp'
+    myfiles = getfiles(path)
     print(myfiles)

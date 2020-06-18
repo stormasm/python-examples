@@ -1,16 +1,18 @@
+# This removes the first line of a file
+#
+# Be careful running this script because
+# if you run it twice it will continue to
+# remove the first line
+
 import os
 from os import listdir
-from os.path import isfile, join
+from os.path import join
 
 def getfilename_withtmp(filename):
     oldname = os.path.splitext(filename)[0]
     extension = os.path.splitext(filename)[1]
     newname = oldname + "-tmp" + extension
     return(newname)
-
-def getfiles_old(mypath):
-    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-    return(onlyfiles)
 
 def getfiles(mypath):
     files = set()
@@ -20,10 +22,6 @@ def getfiles(mypath):
     return(files)
 
 def removeline(filename):
-    newname = getfilename_withtmp(filename)
-    print(newname)
-
-def removeline1(filename):
     filenametmp = getfilename_withtmp(filename)
     with open(filename,'r') as f:
         with open(filenametmp,'w') as f1:
@@ -31,10 +29,11 @@ def removeline1(filename):
             for line in f:
                 f1.write(line)
     os.remove(filename)
-    os.rename(filenametmp,filename)            
+    os.rename(filenametmp,filename)
 
 if __name__ == "__main__":
     path = '/tmp/t1/p1'
     files = getfiles(path)
     for file in files:
-        removeline1(file)
+        removeline(file)
+        print("Removed the first line of " + file)

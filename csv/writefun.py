@@ -8,8 +8,7 @@ def read_test():
 
 def write_csv(index,symbol,dyield,payout):
     with open('eggs.csv', 'w', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',',
-                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        spamwriter = csv.writer(csvfile, delimiter=',')
         spamwriter.writerow(['index'] + ['symbol'] + ['yield'] + ['payout'])
         spamwriter.writerow([index,symbol,dyield,payout])
 

@@ -1,15 +1,17 @@
 
 import csv
 
-my_dict = {'aapl': 'apple', 'amzn': 'amazon', 'ui': 'ubiquiti'}
+def dict_to_csv(filename,dict,columns):
+    with open(filename, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=',')
+        csvwriter.writerow(columns)
+        for key in dict.keys():
+            ary = [key,dict[key]]
+            csvwriter.writerow(ary)
 
-my_columns = ['symbol','name']
+if __name__ == "__main__":
+    my_dict = {'aapl': 'apple', 'amzn': 'amazon', 'ui': 'ubiquiti'}
+    my_columns = ['symbol','name']
+    my_file = "dict.csv"
 
-csv_file = "dict.csv"
-
-with open(csv_file, 'w', newline='') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=',')
-    csvwriter.writerow(my_columns)
-    for key in my_dict.keys():
-        ary = [key,my_dict[key]]
-        csvwriter.writerow(ary)
+    dict_to_csv(my_file,my_dict,my_columns)

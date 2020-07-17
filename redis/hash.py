@@ -12,11 +12,11 @@ def get_symbol_name(symbol):
 
 def redis_hash_to_python_dict(key):
     mydict = {}
-    symbols = rc.hkeys(key)
-    for symbol in symbols:
-        symbol = symbol.decode("utf-8")
-        name = get_symbol_name(symbol)
-        mydict[symbol] = name
+    keys = rc.hkeys(key)
+    for key in keys:
+        key = key.decode("utf-8")
+        name = get_symbol_name(key)
+        mydict[key] = name
     return(mydict)
 
 write_symbol_to_hash('testhash','aapl','apple computer')

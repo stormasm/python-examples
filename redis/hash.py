@@ -2,8 +2,8 @@ import redis
 
 rc = redis.Redis(host='localhost', port=6379, db=0)
 
-def write_symbol_to_hash(rediskey,symbol,name):
-    rc.hset(rediskey,symbol,name)
+def write_field_value_to_hash(key,field,value):
+    rc.hset(key,field,value)
 
 def get_field(key):
     name = rc.hget("testhash",key)
@@ -19,9 +19,9 @@ def redis_hash_to_python_dict(key):
         mydict[key] = name
     return(mydict)
 
-write_symbol_to_hash('testhash','aapl','apple computer')
-write_symbol_to_hash('testhash','ui','ubiquiti networks')
-write_symbol_to_hash('testhash','amzn','amazon')
+write_field_value_to_hash('testhash','aapl','apple computer')
+write_field_value_to_hash('testhash','ui','ubiquiti networks')
+write_field_value_to_hash('testhash','amzn','amazon')
 
 hash = rc.hgetall('testhash')
 print(type(hash))

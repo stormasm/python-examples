@@ -1,6 +1,6 @@
 import redis
 
-def redis_set_to_set(key):
+def redis_set_to_python_set(key):
     members = set()
     rset = r.smembers(key)
     for value in rset:
@@ -15,5 +15,5 @@ r.sadd('testset','green')
 members = r.smembers('testset')
 print(type(members))
 print(members)
-myset = redis_set_to_set('testset')
+myset = redis_set_to_python_set('testset')
 print(myset)

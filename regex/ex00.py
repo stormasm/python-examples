@@ -13,17 +13,7 @@ txt = "The rain in Spain"
 x = re.sub('\s', '9', txt)
 print(x)
 
-# Replace every B character with nothing:
+# Replace every M,B,% character with nothing:
 a = ["123.45B","23B","234M","434.12B","34%","56.1%"]
 c = [re.sub('[M,B,%]', '', x) for x in a]
 print(c)
-
-#a = ["123.45B","34.56M"]
-#c = [re.sub('\d+(?:\.\d+)?))','',x) for x in a]
-#print(c)
-
-#  (\d+(?:\.\d+)?)
-
-#a = 1.1
-#c = re.sub('(\d+(?:\.\d+)?)','',a)
-#print(c)

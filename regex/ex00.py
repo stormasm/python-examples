@@ -7,3 +7,18 @@ import re
 a = ["SDFSD_SFSDF234234","SDFSDF_SDFSDF_234324","TSFSD_SDF_213123"]
 c = [re.sub('_?\d+','',x) for x in a]
 print(c)
+
+# Replace every white-space character with the number 9:
+txt = "The rain in Spain"
+x = re.sub('\s', '9', txt)
+print(x)
+
+#a = ["123.45B","34.56M"]
+#c = [re.sub('\d+(?:\.\d+)?))','',x) for x in a]
+#print(c)
+
+#  (\d+(?:\.\d+)?)
+
+#a = 1.1
+#c = re.sub('(\d+(?:\.\d+)?)','',a)
+#print(c)

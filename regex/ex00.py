@@ -13,6 +13,11 @@ txt = "The rain in Spain"
 x = re.sub('\s', '9', txt)
 print(x)
 
+# Replace every B character with nothing:
+txt = "123.45B"
+x = re.sub('B', '', txt)
+print(x)
+
 #a = ["123.45B","34.56M"]
 #c = [re.sub('\d+(?:\.\d+)?))','',x) for x in a]
 #print(c)

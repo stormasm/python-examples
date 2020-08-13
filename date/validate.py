@@ -7,3 +7,9 @@ class ValidDate(object):
     @classmethod
     def remove_unwanted_chars(self,date):
         print(date)
+
+if __name__ == "__main__":
+    testcases = ['123','456','789']
+    vd = ValidDate()
+    for ex in testcases:
+        vd.remove_unwanted_chars(ex)

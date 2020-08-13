@@ -32,11 +32,12 @@ class ValidDate(object):
         localstore = []
         print(date)
         for elem in date:
-            print(elem)
+            #print(elem)
             bval = self.check_and_store(elem)
             if bval:
                 localstore.append(elem)
-        return localstore
+        result = ''.join(localstore)
+        return result
 
 if __name__ == "__main__":
     testcases = ['123','2020-04-01>>','2020-05-07>>','456']

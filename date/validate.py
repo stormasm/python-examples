@@ -30,7 +30,7 @@ class ValidDate(object):
         """ Check each char and store the good ones and drop the bad ones
         """
         localstore = []
-        print(date)
+        #print(date)
         for elem in date:
             #print(elem)
             bval = self.check_and_store(elem)
@@ -43,5 +43,6 @@ if __name__ == "__main__":
     testcases = ['123','2020-04-01>>','2020-05-07>>','456']
     vd = ValidDate()
     for ex in testcases:
+        print(ex)
         result = vd.remove_unwanted_chars(ex)
         print(result)

@@ -30,9 +30,7 @@ class ValidDate(object):
         """ Check each char and store the good ones and drop the bad ones
         """
         localstore = []
-        #print(date)
         for elem in date:
-            #print(elem)
             bval = self.check_and_store(elem)
             if bval:
                 localstore.append(elem)

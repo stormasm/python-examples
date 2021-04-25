@@ -46,14 +46,14 @@ def write_schema_to_array(path):
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
-    path1 = pathtop + '/equity-fun/sp500/data/20-07-12'
+    path1 = pathtop + '/python-examples/data/csv'
 #   path1 = pathtop + '/tmp/data'
-    path2 = pathtop + '/bluemesa/config/schema-fun.csv'
+    path2 = pathtop + '/python-examples/data/csv/schema-fun.csv'
 
     fieldnames = write_schema_to_array(path2)
     files = os.listdir(path1)
 
-    with open('sp500fun.csv', 'w', newline='') as csvfile:
+    with open('columerge.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(fieldnames)
         for file in files:

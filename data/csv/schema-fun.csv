@@ -1,0 +1,10 @@
+,Attribute,Value
+0,Beta (5Y Monthly),beta
+1,52-Week Change 3,52wk-change
+2,S&P500 52-Week Change 3,52wk-change-sp500
+3,52 Week High 3,52wk-high
+4,52 Week Low 3,52wk-low
+5,Current Ratio (mrq),current-ratio
+6,Book Value Per Share (mrq),book-value
+7,Operating Cash Flow (ttm),operating-cash-flow
+8,Levered Free Cash Flow (ttm),levered-free-cash-flow

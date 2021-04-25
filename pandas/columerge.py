@@ -47,8 +47,7 @@ def write_schema_to_array(path):
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
     path1 = pathtop + '/python-examples/data/csv'
-#   path1 = pathtop + '/tmp/data'
-    path2 = pathtop + '/python-examples/data/csv/schema-fun.csv'
+    path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     fieldnames = write_schema_to_array(path2)
     files = os.listdir(path1)

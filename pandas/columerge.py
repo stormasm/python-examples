@@ -15,7 +15,8 @@ def _convert_to_numeric(s):
 
     if "M" in s:
         s = s.strip("M")
-        return force_float(s) / 1000
+        v = force_float(s) / 1000
+        return(round(v,5))
 
     if "B" in s:
         s = s.strip("B")

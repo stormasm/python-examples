@@ -23,8 +23,9 @@ def get_symbol_from_filename(filename):
     p2 = re.split("-fun",p1)[0]
     return(p2)
 
-def get_array(filename):
+def get_file(filename):
     df = pd.read_csv(filename, sep=',')
+    print(df)
     series = df['Value']
     values = series.values
     values = modify_array_values(values)
@@ -49,7 +50,12 @@ if __name__ == "__main__":
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     dict_schema = read_schema_to_dict(path2)
-    print(dict_schema)
+    #print(dict_schema)
+    files = os.listdir(path1)
+    for file in files:
+        filename = os.path.join(path1, file)
+        df = get_file(filename)
+        #print(df)
 
 
 #    files = os.listdir(path1)

@@ -32,30 +32,38 @@ def get_array(filename):
     values.insert(0,symbol)
     return(values)
 
+# This returns a dict with the original name and the new name
 def write_schema_to_array(path):
-    ary = []
+    d = {}
     with open(path, newline='') as csvfile:
         funreader = csv.reader(csvfile, delimiter=',')
         # do not read the first line of the csv file
         next(funreader)
         for row in funreader:
-            #print(row[0],row[2])
-            ary.append(row[2])
-    ary.insert(0,'symbol')
-    return(ary)
+            print(row[1],row[2])
+            d[row[1]] = row[2]
+            #ary.append(row[2])
+        print(d)
+#    ary.insert(0,'symbol')
+#    return(ary)
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
     path1 = pathtop + '/python-examples/data/csv'
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
-    fieldnames = write_schema_to_array(path2)
-    files = os.listdir(path1)
+    # read in schema dict
 
-    with open('columerge.csv', 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter=',')
-        csvwriter.writerow(fieldnames)
-        for file in files:
-            filename = os.path.join(path1, file)
-            d = get_array(filename)
-            csvwriter.writerow(d)
+    fieldnames = write_schema_to_array(path2)
+
+
+
+#    files = os.listdir(path1)
+
+#    with open('columerge.csv', 'w', newline='') as csvfile:
+#        csvwriter = csv.writer(csvfile, delimiter=',')
+#        csvwriter.writerow(fieldnames)
+#        for file in files:
+#            filename = os.path.join(path1, file)
+#            d = get_array(filename)
+#            csvwriter.writerow(d)

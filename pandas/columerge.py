@@ -4,13 +4,33 @@ import pandas as pd
 from pathlib import PurePath
 import re
 
+def force_float(elt):
+
+    try:
+        return float(elt)
+    except:
+        return elt
+
+def _convert_to_numeric(s):
+
+    if "M" in s:
+        s = s.strip("M")
+        return force_float(s) / 1000
+
+    if "B" in s:
+        s = s.strip("B")
+        return force_float(s)
+
+    return force_float(s)
+
 def modify_array_values(input):
     arr = []
     for value in input:
         mytype = type(value)
         bool = isinstance(value,(float,tuple))
         if not bool:
-            arr.append(value)
+            myvalue = _convert_to_numeric(value)
+            arr.append(myvalue)
         else:
             arr.append("N/A")
     return(arr)
@@ -25,10 +45,12 @@ def get_symbol_from_filename(filename):
 
 def get_file(filename):
     df = pd.read_csv(filename, sep=',')
-    print(df)
+    #print(df)
     series = df['Value']
     values = series.values
+    print(values)
     values = modify_array_values(values)
+    print(values)
     symbol = get_symbol_from_filename(filename)
     values.insert(0,symbol)
     return(values)

@@ -51,9 +51,10 @@ def get_file(filename):
     values = series.values
     print(values)
     values = modify_array_values(values)
-    print(values)
+    #print(values)
     symbol = get_symbol_from_filename(filename)
     values.insert(0,symbol)
+    print(values)
     return(values)
 
 # This returns a dict with the original name and the new name
@@ -73,7 +74,7 @@ if __name__ == "__main__":
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     dict_schema = read_schema_to_dict(path2)
-    #print(dict_schema)
+    print(dict_schema)
     files = os.listdir(path1)
     for file in files:
         filename = os.path.join(path1, file)

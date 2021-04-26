@@ -33,29 +33,23 @@ def get_array(filename):
     return(values)
 
 # This returns a dict with the original name and the new name
-def write_schema_to_array(path):
+def read_schema_to_dict(path):
     d = {}
     with open(path, newline='') as csvfile:
         funreader = csv.reader(csvfile, delimiter=',')
         # do not read the first line of the csv file
         next(funreader)
         for row in funreader:
-            print(row[1],row[2])
             d[row[1]] = row[2]
-            #ary.append(row[2])
-        print(d)
-#    ary.insert(0,'symbol')
-#    return(ary)
+    return(d)
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
     path1 = pathtop + '/python-examples/data/csv'
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
-    # read in schema dict
-
-    fieldnames = write_schema_to_array(path2)
-
+    dict_schema = read_schema_to_dict(path2)
+    print(dict_schema)
 
 
 #    files = os.listdir(path1)

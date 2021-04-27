@@ -73,6 +73,7 @@ if __name__ == "__main__":
     dict_schema = read_schema_to_dict(path2)
     ary = []
     for key in dict_schema:
+        print(key)
         ary.append(dict_schema[key])
     files = os.listdir(path1)
     d = {}

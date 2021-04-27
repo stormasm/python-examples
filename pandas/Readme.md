@@ -16,9 +16,9 @@ This was the first program written in this repo and eventually
 its job will be to merge columns from different data files but
 for now it just kicks the ball off...
 
-#### filter.py
+#### index.py
 This is the 2nd program.  Eventually it will go away.  It is
-a copy of the first program with the ability to filter out
+a copy of some of the code from the first program with the ability to filter out
 columns from the data frame and indices from the data frame.
 
 It takes as input 2 files, both files are optional...

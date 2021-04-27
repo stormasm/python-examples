@@ -46,7 +46,7 @@ def get_symbol_from_filename(filename):
 
 def get_series_from_file(filename):
     df = pd.read_csv(filename, sep=',')
-    print(df)
+    #print(df)
     series = df['Value']
     values = series.values
     #print(values)
@@ -71,7 +71,9 @@ if __name__ == "__main__":
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     dict_schema = read_schema_to_dict(path2)
-    #print(dict_schema)
+    ary = []
+    for key in dict_schema:
+        ary.append(dict_schema[key])
     files = os.listdir(path1)
     d = {}
     for file in files:
@@ -79,7 +81,7 @@ if __name__ == "__main__":
         series = get_series_from_file(filename)
         symbol = get_symbol_from_filename(filename)
         d[symbol] = series
-    df = pd.DataFrame(d)
+    df = pd.DataFrame(d,index=ary)
     print(df)
 
 

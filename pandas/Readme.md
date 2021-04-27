@@ -24,5 +24,6 @@ columns from the data frame and indices from the data frame.
 It takes as input 2 files, both files are optional...
 * the first file is a list of symbols
 * the second file is a list of indices
+
 If neither file is provided its run off hardcoded arrays
 built into the program...

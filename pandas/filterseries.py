@@ -108,8 +108,9 @@ if __name__ == "__main__":
         filename = os.path.join(path1, file)
         series = get_filtered_series_from_file(dic_schema,ary,filename)
         symbol = get_symbol_from_filename(filename)
-        print(symbol)
-        print(series)
+        d[symbol] = series
+    sam = pd.DataFrame(d)
+    print(sam)
 #        symbol = get_symbol_from_filename(filename)
 #        d[symbol] = series
 #    df = pd.DataFrame(d,index=ary)

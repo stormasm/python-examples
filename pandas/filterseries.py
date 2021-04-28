@@ -54,13 +54,16 @@ def get_series_from_file(filename):
     #print(values)
     return(values)
 
-def get_filtered_series_from_file(filename):
+def get_filtered_series_from_file(dicschema,filename):
     df = pd.read_csv(filename, sep=',')
     #print(df)
     dlen = len(df)
 
     for x,y in df.iterrows():
-        print(y['Attribute'],y['Value'])
+        origkey = y['Attribute']
+        shortkey = dicschema[origkey]
+
+        print(shortkey,y['Value'])
 
 '''
     for x in df['Attribute']:
@@ -125,7 +128,7 @@ if __name__ == "__main__":
     d = {}
     for file in files:
         filename = os.path.join(path1, file)
-        series = get_filtered_series_from_file(filename)
+        series = get_filtered_series_from_file(dic_schema,filename)
 #        symbol = get_symbol_from_filename(filename)
 #        d[symbol] = series
 #    df = pd.DataFrame(d,index=ary)

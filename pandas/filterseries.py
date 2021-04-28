@@ -56,18 +56,27 @@ def get_series_from_file(filename):
 
 def get_filtered_series_from_file(filename):
     df = pd.read_csv(filename, sep=',')
-    print(df)
+    #print(df)
     dlen = len(df)
-    for x,y in df.items():
-        for i in range(dlen):
-            print(type(x))
-            print(type(y))
-            print(y[i])
 
-#    for row_index, row in df.iterrows():
-#        print(row_index)
+    for x,y in df.iterrows():
+        print(y['Attribute'],y['Value'])
 
 '''
+    for x in df['Attribute']:
+        print(x)
+
+
+    for x,y in df.items():
+        #print("type x =",type(x))
+        #print(x)
+        #print("type y =",type(y))
+        #print(y)
+        for i in range(dlen):
+            print(y[i])
+            #print('ok')
+
+
     series = df['Value']
     values = series.values
     #print(values)

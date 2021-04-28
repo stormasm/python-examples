@@ -56,13 +56,9 @@ def get_series_from_file(filename):
 
 def get_filtered_series_from_file(dicschema,keepary,filename):
     df = pd.read_csv(filename, sep=',')
-    #print(df)
-    dlen = len(df)
-
     for x,y in df.iterrows():
         origkey = y['Attribute']
         shortkey = dicschema[origkey]
-
         if shortkey in keepary:
             print(shortkey,y['Value'])
 

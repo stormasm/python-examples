@@ -54,6 +54,28 @@ def get_series_from_file(filename):
     #print(values)
     return(values)
 
+def get_filtered_series_from_file(filename):
+    df = pd.read_csv(filename, sep=',')
+    print(df)
+    dlen = len(df)
+    for x,y in df.items():
+        for i in range(dlen):
+            print(type(x))
+            print(type(y))
+            print(y[i])
+
+#    for row_index, row in df.iterrows():
+#        print(row_index)
+
+'''
+    series = df['Value']
+    values = series.values
+    #print(values)
+    values = modify_array_values(values)
+    #print(values)
+    return(values)
+'''
+
 # This returns a dict with the original name and the new name
 def read_schema_to_dict(path):
     d = {}
@@ -79,22 +101,23 @@ def read_reverse_schema_to_dict(path):
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
-    path1 = pathtop + '/python-examples/data/csv'
+#    path1 = pathtop + '/python-examples/data/csv'
+    path1 = '/tmp/csv'
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     dic_schema = read_schema_to_dict(path2)
     rdic_schema = read_reverse_schema_to_dict(path2)
-    print(rdic_schema)
+    #print(rdic_schema)
     ary = ['book-value','free-cash-flow']
-    for key in dic_schema:
-        ary.append(dic_schema[key])
+    #for key in dic_schema:
+    #    ary.append(dic_schema[key])
     #print(ary)
     files = os.listdir(path1)
     d = {}
     for file in files:
         filename = os.path.join(path1, file)
-        series = get_series_from_file(filename)
-        symbol = get_symbol_from_filename(filename)
-        d[symbol] = series
+        series = get_filtered_series_from_file(filename)
+#        symbol = get_symbol_from_filename(filename)
+#        d[symbol] = series
 #    df = pd.DataFrame(d,index=ary)
     #print(df[['ui','ibm','rdfn']])

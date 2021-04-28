@@ -24,6 +24,14 @@ def _convert_to_numeric(s):
 
     return force_float(s)
 
+def modify_value(value):
+    mytype = type(value)
+    bool = isinstance(value,(float,tuple))
+    if not bool:
+        return(_convert_to_numeric(value))
+    else:
+        return("N/A")
+
 def modify_array_values(input):
     arr = []
     for value in input:
@@ -62,7 +70,9 @@ def get_filtered_series_from_file(dicschema,keepary,filename):
         shortkey = dicschema[origkey]
         if shortkey in keepary:
             #print(shortkey,y['Value'])
-            d[shortkey] = y['Value']
+            value = y['Value']
+            value = modify_value(value)
+            d[shortkey] = value
     #print(d)
     return(pd.Series(d))
 

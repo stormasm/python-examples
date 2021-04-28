@@ -92,16 +92,10 @@ def read_reverse_schema_to_dict(path):
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
     path1 = pathtop + '/python-examples/data/csv'
-#    path1 = '/tmp/csv'
+#   path1 = '/tmp/csv'
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
-
     dic_schema = read_schema_to_dict(path2)
-    rdic_schema = read_reverse_schema_to_dict(path2)
-    #print(rdic_schema)
     ary = ['book-value','free-cash-flow']
-    #for key in dic_schema:
-    #    ary.append(dic_schema[key])
-    #print(ary)
     files = os.listdir(path1)
     d = {}
     for file in files:
@@ -109,9 +103,5 @@ if __name__ == "__main__":
         series = get_filtered_series_from_file(dic_schema,ary,filename)
         symbol = get_symbol_from_filename(filename)
         d[symbol] = series
-    sam = pd.DataFrame(d)
-    print(sam)
-#        symbol = get_symbol_from_filename(filename)
-#        d[symbol] = series
-#    df = pd.DataFrame(d,index=ary)
-    #print(df[['ui','ibm','rdfn']])
+    df = pd.DataFrame(d)
+    print(df)

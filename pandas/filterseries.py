@@ -56,34 +56,15 @@ def get_series_from_file(filename):
 
 def get_filtered_series_from_file(dicschema,keepary,filename):
     df = pd.read_csv(filename, sep=',')
+    d = {}
     for x,y in df.iterrows():
         origkey = y['Attribute']
         shortkey = dicschema[origkey]
         if shortkey in keepary:
-            print(shortkey,y['Value'])
-
-'''
-    for x in df['Attribute']:
-        print(x)
-
-
-    for x,y in df.items():
-        #print("type x =",type(x))
-        #print(x)
-        #print("type y =",type(y))
-        #print(y)
-        for i in range(dlen):
-            print(y[i])
-            #print('ok')
-
-
-    series = df['Value']
-    values = series.values
-    #print(values)
-    values = modify_array_values(values)
-    #print(values)
-    return(values)
-'''
+            #print(shortkey,y['Value'])
+            d[shortkey] = y['Value']
+    #print(d)
+    return(pd.Series(d))
 
 # This returns a dict with the original name and the new name
 def read_schema_to_dict(path):
@@ -110,8 +91,8 @@ def read_reverse_schema_to_dict(path):
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
-#    path1 = pathtop + '/python-examples/data/csv'
-    path1 = '/tmp/csv'
+    path1 = pathtop + '/python-examples/data/csv'
+#    path1 = '/tmp/csv'
     path2 = pathtop + '/python-examples/data/schema-fun.csv'
 
     dic_schema = read_schema_to_dict(path2)
@@ -126,6 +107,9 @@ if __name__ == "__main__":
     for file in files:
         filename = os.path.join(path1, file)
         series = get_filtered_series_from_file(dic_schema,ary,filename)
+        symbol = get_symbol_from_filename(filename)
+        print(symbol)
+        print(series)
 #        symbol = get_symbol_from_filename(filename)
 #        d[symbol] = series
 #    df = pd.DataFrame(d,index=ary)

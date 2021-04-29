@@ -1,18 +1,4 @@
 ,attribute,value
-0,1y Target Est,141.83
-1,52 Week Range,105.92 - 144.74
-2,Ask,143.15 x 900
-3,Avg. Volume,5774352.0
-4,Beta (5Y Monthly),1.23
-5,Bid,142.90 x 800
-6,Day's Range,142.11 - 143.39
-7,EPS (TTM),5.98
-8,Earnings Date,"Jul 19, 2021"
-9,Ex-Dividend Date,"May 07, 2021"
-10,Forward Dividend & Yield,6.56 (4.62%)
-11,Market Cap,127.784B
-12,Open,142.92
-13,PE Ratio (TTM),23.91
-14,Previous Close,142.01
-15,Quote Price,143.0
-16,Volume,3768129.0
+0,EPS (TTM),5.98
+1,Market Cap,127.784B
+2,PE Ratio (TTM),23.91

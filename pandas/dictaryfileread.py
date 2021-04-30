@@ -22,7 +22,15 @@ def get_symbol_from_filename(filename):
     return(p2)
 
 def add_file_to_dict(dict,symbol,filename):
-    print(symbol)
+    # check to see if this symbol is in the dict
+    if symbol in dict:
+        ary = dict[symbol]
+        ary.append(filename)
+        return dict
+    ary = []
+    ary.append(filename)
+    dict[symbol] = ary
+    return dict
 
 if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
@@ -32,5 +40,5 @@ if __name__ == "__main__":
     for file in files:
         filename = os.path.join(path1, file)
         symbol = get_symbol_from_filename(filename)
-        add_file_to_dict(d,symbol,filename)
+        d = add_file_to_dict(d,symbol,filename)
     print(d)

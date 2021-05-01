@@ -32,10 +32,10 @@ def add_file_to_dict(dict,symbol,filename):
     dict[symbol] = ary
     return dict
 
-def daryfilereader(files):
+def daryfilereader(filepath,files):
     d = {}
     for file in files:
-        filename = os.path.join(path1, file)
+        filename = os.path.join(filepath, file)
         symbol = get_symbol_from_filename(filename)
         d = add_file_to_dict(d,symbol,filename)
     return(d)
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     pathtop = os.environ['BMTOP']
     path1 = pathtop + '/python-examples/data/csv'
     files = os.listdir(path1)
-    d = daryfilereader(files)
+    d = daryfilereader(path1,files)
     print(d)
     print("\n\n")
     print(d['zm'])

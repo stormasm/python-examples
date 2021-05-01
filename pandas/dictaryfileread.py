@@ -46,3 +46,5 @@ if __name__ == "__main__":
     files = os.listdir(path1)
     d = daryfilereader(files)
     print(d)
+    print("\n\n")
+    print(d['zm'])

@@ -27,3 +27,6 @@ It takes as input 2 files, both files are optional...
 
 If neither file is provided its run off hardcoded arrays
 built into the program...
+
+### References
+[How to print all rows and not truncate dataframe](https://thispointer.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/)

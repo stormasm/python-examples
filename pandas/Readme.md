@@ -1,4 +1,17 @@
 
+### Data Model
+
+| symbol | cashflow | mcap |
+| ------ | -------- | ---- |
+| symbol 1 | cf1 | mcap1 |
+| symbol 2 | cf2 | mcap2 |
+
+symbols are always indexes or rows because you may want to display 100 symbols and having the symbols in columns makes no sense.
+
+the series or column is cashflow mcap etc...
+
+### Pandas Tutorial
+
 This program is a tutorial in how to use pandas.
 See the
 [Intro to data structures](https://pandas.pydata.org/docs/user_guide/dsintro.html) for more details...

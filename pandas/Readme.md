@@ -8,7 +8,7 @@
 
 stock symbols are always indexes or rows because you may want to display 100 symbols and having the symbols in columns makes no sense.
 
-the series or column is {cashflow, mcap} etc where each column can be a different datatype.  So you can have strings in one column, ints in another, and floats in another.
+the series or column is {cashflow, mcap} etc where each column can be a different datatype.  So you can have strings in one column, ints in another, and floats in another.  The key point is that for each column the datatype is the same.
 
 ### Pandas Tutorial
 

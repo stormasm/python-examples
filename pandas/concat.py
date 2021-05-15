@@ -30,8 +30,11 @@ if __name__ == "__main__":
 
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
-    print(symbols)
     d = daryfilereader(path1,files)
-    result = concat('ibm',d)
-    pd.set_option('display.max_rows', None)
-#   print(result)
+    for symbol in symbols:
+        print('\n')
+        print(symbol)
+        print('\n')
+        result = concat(symbol,d)
+        pd.set_option('display.max_rows', None)
+        print(result)

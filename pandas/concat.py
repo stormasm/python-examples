@@ -37,4 +37,6 @@ if __name__ == "__main__":
         print('\n')
         result = concat(symbol,d)
         pd.set_option('display.max_rows', None)
-        print(result)
+        print(result.keys())
+        print(result['attribute'])
+        print(result['value'])

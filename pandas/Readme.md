@@ -28,6 +28,9 @@ See the
 
 
 ### References
+
+[dataframe.keys()](https://www.geeksforgeeks.org/python-pandas-dataframe-keys/)
+
 [How to print all rows and not truncate dataframe](https://thispointer.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/)
 
 [Github Markdown Tables](https://www.pluralsight.com/guides/working-tables-github-markdown)

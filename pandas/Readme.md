@@ -1,4 +1,14 @@
 
+### Files that are in use...
+
+##### concat.py
+
+Assumes files are located in:
+
+##### dictaryfileread.py is used by concat.py
+
+dictaryfileread.py is used by concat.py
+
 ### Data Model
 
 | symbol | cashflow | mcap |
@@ -15,6 +25,21 @@ the series or column is {cashflow, mcap} etc where each column can be a differen
 This program is a tutorial in how to use pandas.
 See the
 [Intro to data structures](https://pandas.pydata.org/docs/user_guide/dsintro.html) for more details...
+
+
+### References
+[How to print all rows and not truncate dataframe](https://thispointer.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/)
+
+[Github Markdown Tables](https://www.pluralsight.com/guides/working-tables-github-markdown)
+
+#### Legacy Code
+
+The following files are no longer used and I believe are candidates for removal.
+
+* columerge.py
+* filterseries.py
+* index.py
+
 
 The programs in this directory require these files to run...
 
@@ -40,8 +65,3 @@ It takes as input 2 files, both files are optional...
 
 If neither file is provided its run off hardcoded arrays
 built into the program...
-
-### References
-[How to print all rows and not truncate dataframe](https://thispointer.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/)
-
-[Github Markdown Tables](https://www.pluralsight.com/guides/working-tables-github-markdown)

@@ -40,3 +40,4 @@ if __name__ == "__main__":
         print(result.keys())
         print(result['attribute'])
         print(result['value'])
+        print('Number of columns = ',len(result.columns))

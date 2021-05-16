@@ -12,7 +12,7 @@ def concat(symbol,symbol_fileary):
     for file in fileary:
         df = get_df_from_file(file)
         dfary.append(df)
-    result = pd.concat(dfary)
+    result = pd.concat(dfary,ignore_index=True)
     return(result)
 
 def get_symbols_from_filenames(filenames):
@@ -37,7 +37,8 @@ if __name__ == "__main__":
         print('\n')
         result = concat(symbol,d)
         pd.set_option('display.max_rows', None)
-        print(result.keys())
-        print(result['attribute'])
-        print(result['value'])
-        print('Number of columns = ',len(result.columns))
+#       print(result.keys())
+#       print(result['attribute'])
+#       print(result['value'])
+#       print('Number of columns = ',len(result.columns))
+        print(result['attribute'][67])

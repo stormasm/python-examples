@@ -1,5 +1,11 @@
 import pandas as pd
 
+funmap = {
+    "cashflow": "Levered Free Cash Flow (ttm)",
+    "operatingcashflow": "Operating Cash Flow (ttm)",
+    "mcap": "Market Cap",
+}
+
 def test1():
     d = {
         "cashflow": pd.Series(['100.0M', '200.0M', '300.0M'], index=["ibm", "ui", "zm"]),

@@ -27,24 +27,31 @@ def get_symbols_from_filenames(filenames):
     return list(symbols)
 
 
-def process(symbols, dictfileary):
+def select(row, funmap):
+    for param in ["mcap", "cashflow"]:
+        if row[1] == funmap[param]:
+            print(param, row[2])
+
+
+def process(symbols, dictfileary, funmap):
     for symbol in symbols:
         print(symbol)
         df = concat(symbol, dictfileary)
         pd.set_option("display.max_rows", None)
         for index, row in df.iterrows():
-            if row[1] == "Levered Free Cash Flow (ttm)":
-                print(row[1], row[2])
-            if row[1] == "Market Cap":
-                print(row[1], row[2])
+            select(row, funmap)
 
 
 if __name__ == "__main__":
     pathtop = os.environ["BMTOP"]
     #   path1 = pathtop + '/python-examples/data/csv'
     path1 = pathtop + "/bluemesa/tmp/fun/in/test"
-
+    funmap = {
+        "cashflow": "Levered Free Cash Flow (ttm)",
+        "operatingcashflow": "Operating Cash Flow (ttm)",
+        "mcap": "Market Cap",
+    }
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)
-    process(symbols, dictfileary)
+    process(symbols, dictfileary, funmap)

@@ -38,4 +38,7 @@ if __name__ == "__main__":
         df = concat(symbol,d)
         pd.set_option('display.max_rows', None)
         for index,row in df.iterrows():
-            print(type(row[1]),row[1])
+            if row[1] == 'Levered Free Cash Flow (ttm)':
+                print(row[1],row[2])
+            if row[1] == 'Market Cap':
+                print(row[1],row[2])

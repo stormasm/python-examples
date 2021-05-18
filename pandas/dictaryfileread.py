@@ -13,15 +13,17 @@ import os
 from pathlib import PurePath
 import re
 
+
 def get_symbol_from_filename(filename):
     pp = PurePath(filename)
     # get the filename in the path
     p1 = pp.parts[-1]
     # get everything before the dot
-    p2 = re.split("-",p1)[0]
-    return(p2)
+    p2 = re.split("-", p1)[0]
+    return p2
 
-def add_file_to_dict(dict,symbol,filename):
+
+def add_file_to_dict(dict, symbol, filename):
     # check to see if this symbol is in the dict
     if symbol in dict:
         ary = dict[symbol]
@@ -32,19 +34,21 @@ def add_file_to_dict(dict,symbol,filename):
     dict[symbol] = ary
     return dict
 
-def daryfilereader(filepath,files):
+
+def daryfilereader(filepath, files):
     d = {}
     for file in files:
         filename = os.path.join(filepath, file)
         symbol = get_symbol_from_filename(filename)
-        d = add_file_to_dict(d,symbol,filename)
-    return(d)
+        d = add_file_to_dict(d, symbol, filename)
+    return d
+
 
 if __name__ == "__main__":
-    pathtop = os.environ['BMTOP']
-    path1 = pathtop + '/python-examples/data/csv'
+    pathtop = os.environ["BMTOP"]
+    path1 = pathtop + "/python-examples/data/csv"
     files = os.listdir(path1)
-    d = daryfilereader(path1,files)
+    d = daryfilereader(path1, files)
     print(d)
     print("\n\n")
-    print(d['zm'])
+    print(d["zm"])

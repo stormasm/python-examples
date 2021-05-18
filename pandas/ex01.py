@@ -1,6 +1,6 @@
 import pandas as pd
 
-start = {
+begin = {
     "ibm": [{"mcap": "129.284B"}, {"cashflow": "15.94B"}],
     "zm": [{"cashflow": "1.35B"}, {"mcap": "90.478B"}],
     "docu": [{"mcap": "36.23B"}, {"cashflow": "540.45M"}],
@@ -20,14 +20,21 @@ end = {
 }
 
 
-def test1():
+def test1(start):
+    symbolary = []
+    paramset = set()
     for symbol in start:
-        print(symbol)
+        symbolary.append(symbol)
         aryd = start[symbol]
-        for d in aryd:
-            print(d)
+        for dict in aryd:
+            params = dict.keys()
+            for param in params:
+                paramset.add(param)
+    print(symbolary)
+    print(paramset)
+    return (symbolary, paramset)
 
 
 if __name__ == "__main__":
-    df = test1()
+    df = test1(begin)
     pd.set_option("display.max_rows", None)

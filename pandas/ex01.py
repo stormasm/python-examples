@@ -1,3 +1,6 @@
+# This example takes as input our intermediate dict file called begin
+# and transforms it into a dict called end which gets passed into the dataframe
+
 import pandas as pd
 
 begin = {

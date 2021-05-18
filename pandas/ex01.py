@@ -33,7 +33,6 @@ def build_param_ary_for_symbol(symbolary, paramset, start):
         for symbol in symbolary:
             print(symbol)
             ary = start[symbol]
-            print(ary)
             value = get_param_for_symbol(param, ary)
             print(value)
 

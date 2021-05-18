@@ -1,4 +1,5 @@
 from dictaryfileread import daryfilereader, get_symbol_from_filename
+from dictdf import process_intermediate_dict
 import os
 import pandas as pd
 
@@ -62,4 +63,8 @@ if __name__ == "__main__":
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)
     idict = create_intermediate_dict(symbols, dictfileary, funmap)
-    print(idict)
+    # print(idict)
+    d = process_intermediate_dict(idict)
+    df = pd.DataFrame(d)
+    pd.set_option("display.max_rows", None)
+    print(df)

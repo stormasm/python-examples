@@ -3,11 +3,26 @@
 
 ##### concat.py
 
-Assumes files are located in:
+This shows what the data looks like in a dataframe coming out of the test files
 
-##### dictaryfileread.py is used by concat.py
+##### selectbuild.py
 
-dictaryfileread.py is used by concat.py
+This is the file that processes the dicts and dataframes and generates
+a final dataframe that is the product of all of this work.
+
+##### ex00.py
+
+This shows a simple example of what the final dict should look like
+and then how the dataframe takes it in and outputs our final solution
+
+##### ex01.py
+
+This example takes as input our intermediate dict file called begin
+and transforms it into a dict called end which gets passed into the dataframe
+
+#### Assumes files are located in:
+
+dictaryfileread.py which is used by concat.py
 
 ### Data Model
 

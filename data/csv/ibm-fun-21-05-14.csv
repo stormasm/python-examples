@@ -1,0 +1,52 @@
+,attribute,value
+0,Beta (5Y Monthly),1.23
+1,52-Week Change 3,23.24%
+2,S&P500 52-Week Change 3,43.61%
+3,52 Week High 3,148.74
+4,52 Week Low 3,105.92
+5,50-Day Moving Average 3,138.96
+6,200-Day Moving Average 3,126.64
+7,Avg Vol (3 month) 3,5.8M
+8,Avg Vol (10 day) 3,6.14M
+9,Shares Outstanding 5,893.52M
+10,Implied Shares Outstanding 6,
+11,Float,891.9M
+12,% Held by Insiders 1,0.13%
+13,% Held by Institutions 1,58.25%
+14,"Shares Short (Apr 29, 2021) 4",28.59M
+15,"Short Ratio (Apr 29, 2021) 4",4.96
+16,"Short % of Float (Apr 29, 2021) 4",3.20%
+17,"Short % of Shares Outstanding (Apr 29, 2021) 4",3.20%
+18,"Shares Short (prior month Mar 30, 2021) 4",27.01M
+19,Forward Annual Dividend Rate 4,6.56
+20,Forward Annual Dividend Yield 4,4.55%
+21,Trailing Annual Dividend Rate 3,6.52
+22,Trailing Annual Dividend Yield 3,4.52%
+23,5 Year Average Dividend Yield 4,4.37
+24,Payout Ratio 4,110.88%
+25,Dividend Date 3,"Jun 09, 2021"
+26,Ex-Dividend Date 4,"May 06, 2021"
+27,Last Split Factor 2,2:1
+28,Last Split Date 3,"May 26, 1999"
+29,Fiscal Year Ends,"Dec 30, 2020"
+30,Most Recent Quarter (mrq),"Mar 30, 2021"
+31,Profit Margin,7.28%
+32,Operating Margin (ttm),12.32%
+33,Return on Assets (ttm),3.76%
+34,Return on Equity (ttm),25.36%
+35,Revenue (ttm),73.78B
+36,Revenue Per Share (ttm),82.73
+37,Quarterly Revenue Growth (yoy),0.90%
+38,Gross Profit (ttm),35.58B
+39,EBITDA,15.82B
+40,Net Income Avi to Common (ttm),5.28B
+41,Diluted EPS (ttm),5.98
+42,Quarterly Earnings Growth (yoy),-18.70%
+43,Total Cash (mrq),11.13B
+44,Total Cash Per Share (mrq),12.46
+45,Total Debt (mrq),61.12B
+46,Total Debt/Equity (mrq),284.11
+47,Current Ratio (mrq),0.93
+48,Book Value Per Share (mrq),23.94
+49,Operating Cash Flow (ttm),18.63B
+50,Levered Free Cash Flow (ttm),15.94B

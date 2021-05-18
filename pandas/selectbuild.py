@@ -27,6 +27,18 @@ def get_symbols_from_filenames(filenames):
     return list(symbols)
 
 
+def process(symbols, dictfileary):
+    for symbol in symbols:
+        print(symbol)
+        df = concat(symbol, dictfileary)
+        pd.set_option("display.max_rows", None)
+        for index, row in df.iterrows():
+            if row[1] == "Levered Free Cash Flow (ttm)":
+                print(row[1], row[2])
+            if row[1] == "Market Cap":
+                print(row[1], row[2])
+
+
 if __name__ == "__main__":
     pathtop = os.environ["BMTOP"]
     #   path1 = pathtop + '/python-examples/data/csv'
@@ -34,13 +46,5 @@ if __name__ == "__main__":
 
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
-    d = daryfilereader(path1, files)
-    for symbol in symbols:
-        print(symbol)
-        df = concat(symbol, d)
-        pd.set_option("display.max_rows", None)
-        for index, row in df.iterrows():
-            if row[1] == "Levered Free Cash Flow (ttm)":
-                print(row[1], row[2])
-            if row[1] == "Market Cap":
-                print(row[1], row[2])
+    dictfileary = daryfilereader(path1, files)
+    process(symbols, dictfileary)

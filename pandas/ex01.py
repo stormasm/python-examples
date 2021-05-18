@@ -27,14 +27,15 @@ def get_param_for_symbol(param, ary):
             return dict[param]
 
 
-def build_param_ary_for_symbol(symbolary, paramset, start):
+def build_param_ary_for_param(symbolary, paramset, start):
     for param in paramset:
         print(param)
+        paramary = []
         for symbol in symbolary:
-            print(symbol)
             ary = start[symbol]
             value = get_param_for_symbol(param, ary)
-            print(value)
+            paramary.append(value)
+        print(paramary)
 
 
 def get_symbolary_paramset(start):
@@ -55,4 +56,4 @@ if __name__ == "__main__":
     print(tuple)
     symbolary = tuple[0]
     paramset = tuple[1]
-    build_param_ary_for_symbol(symbolary, paramset, begin)
+    build_param_ary_for_param(symbolary, paramset, begin)

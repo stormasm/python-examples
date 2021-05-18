@@ -31,7 +31,6 @@ def select(row, funmap):
     d = {}
     for param in ["mcap", "cashflow"]:
         if row[1] == funmap[param]:
-            # print(param, row[2])
             d[param] = row[2]
     return d
 
@@ -39,13 +38,15 @@ def select(row, funmap):
 def process(symbols, dictfileary, funmap):
     d = {}
     for symbol in symbols:
-        print(symbol)
+        list = []
         df = concat(symbol, dictfileary)
         pd.set_option("display.max_rows", None)
         for index, row in df.iterrows():
             dict = select(row, funmap)
             if any(dict.values()):
-                print(dict)
+                list.append(dict)
+        d[symbol] = list
+    return d
 
 
 if __name__ == "__main__":
@@ -60,4 +61,5 @@ if __name__ == "__main__":
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)
-    process(symbols, dictfileary, funmap)
+    result = process(symbols, dictfileary, funmap)
+    print(result)

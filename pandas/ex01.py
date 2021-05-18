@@ -30,13 +30,11 @@ def get_param_for_symbol(param, ary):
 def build_param_ary_for_param(symbolary, paramset, start):
     dict_df = {}
     for param in paramset:
-        # print(param)
         paramary = []
         for symbol in symbolary:
             ary = start[symbol]
             value = get_param_for_symbol(param, ary)
             paramary.append(value)
-        # print(paramary)
         dict_df[param] = pd.Series(paramary, index=symbolary)
     return dict_df
 
@@ -56,11 +54,9 @@ def get_symbolary_paramset(start):
 
 if __name__ == "__main__":
     tuple = get_symbolary_paramset(begin)
-    # print(tuple)
     symbolary = tuple[0]
     paramset = tuple[1]
     d = build_param_ary_for_param(symbolary, paramset, begin)
-    # print(d)
     df = pd.DataFrame(d)
     pd.set_option("display.max_rows", None)
     print(df)

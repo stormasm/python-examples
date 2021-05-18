@@ -32,9 +32,7 @@ if __name__ == "__main__":
     symbols = get_symbols_from_filenames(files)
     d = daryfilereader(path1,files)
     for symbol in symbols:
-        print('\n')
         print(symbol)
-        print('\n')
         df = concat(symbol,d)
         pd.set_option('display.max_rows', None)
         for index,row in df.iterrows():

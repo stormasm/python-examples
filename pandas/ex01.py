@@ -55,11 +55,16 @@ def get_symbolary_paramset(start):
     return (symbolary, paramset)
 
 
-if __name__ == "__main__":
-    tuple = get_symbolary_paramset(begin)
+def process_intermediate_dict(idict):
+    tuple = get_symbolary_paramset(idict)
     symbolary = tuple[0]
     paramset = tuple[1]
     d = build_param_ary_for_param(symbolary, paramset, begin)
+    return d
+
+
+if __name__ == "__main__":
+    d = process_intermediate_dict(begin)
     df = pd.DataFrame(d)
     pd.set_option("display.max_rows", None)
     print(df)

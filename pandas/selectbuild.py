@@ -1,31 +1,8 @@
 from dictaryfileread import daryfilereader, get_symbol_from_filename
 from dictdf import process_intermediate_dict
+from concat import get_symbols_from_filenames, concat
 import os
 import pandas as pd
-
-
-def get_df_from_file(filename):
-    df = pd.read_csv(filename, sep=",")
-    return df
-
-
-def concat(symbol, symbol_fileary):
-    dfary = []
-    fileary = symbol_fileary[symbol]
-    for file in fileary:
-        df = get_df_from_file(file)
-        dfary.append(df)
-    result = pd.concat(dfary, ignore_index=True)
-    return result
-
-
-def get_symbols_from_filenames(filenames):
-    symbols = set()
-    for file in filenames:
-        symbol = get_symbol_from_filename(file)
-        symbols.add(symbol)
-    # Turn the set into a list
-    return list(symbols)
 
 
 def select(row, funmap):

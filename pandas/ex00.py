@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def test1():
     d = {
         "cashflow": pd.Series(

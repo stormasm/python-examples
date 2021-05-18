@@ -35,7 +35,7 @@ def select(row, funmap):
     return d
 
 
-def process(symbols, dictfileary, funmap):
+def create_intermediate_dict(symbols, dictfileary, funmap):
     d = {}
     for symbol in symbols:
         list = []
@@ -61,5 +61,5 @@ if __name__ == "__main__":
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)
-    result = process(symbols, dictfileary, funmap)
-    print(result)
+    idict = create_intermediate_dict(symbols, dictfileary, funmap)
+    print(idict)

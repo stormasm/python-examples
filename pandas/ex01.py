@@ -20,7 +20,16 @@ end = {
 }
 
 
-def test1(start):
+def build_param_ary_for_symbol(symbolary, paramset, start):
+    for param in paramset:
+        print(param)
+        for symbol in symbolary:
+            print(symbol)
+            ary = start[symbol]
+            print(ary)
+
+
+def get_symbolary_paramset(start):
     symbolary = []
     paramset = set()
     for symbol in start:
@@ -30,11 +39,12 @@ def test1(start):
             params = dict.keys()
             for param in params:
                 paramset.add(param)
-    print(symbolary)
-    print(paramset)
     return (symbolary, paramset)
 
 
 if __name__ == "__main__":
-    df = test1(begin)
-    pd.set_option("display.max_rows", None)
+    tuple = get_symbolary_paramset(begin)
+    print(tuple)
+    symbolary = tuple[0]
+    paramset = tuple[1]
+    build_param_ary_for_symbol(symbolary, paramset, begin)

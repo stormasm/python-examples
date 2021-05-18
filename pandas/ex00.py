@@ -1,3 +1,6 @@
+# This shows a simple example of what the final dict should look like
+# and then how the dataframe takes it in and outputs our final solution
+
 import pandas as pd
 
 

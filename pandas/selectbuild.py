@@ -28,18 +28,24 @@ def get_symbols_from_filenames(filenames):
 
 
 def select(row, funmap):
+    d = {}
     for param in ["mcap", "cashflow"]:
         if row[1] == funmap[param]:
-            print(param, row[2])
+            # print(param, row[2])
+            d[param] = row[2]
+    return d
 
 
 def process(symbols, dictfileary, funmap):
+    d = {}
     for symbol in symbols:
         print(symbol)
         df = concat(symbol, dictfileary)
         pd.set_option("display.max_rows", None)
         for index, row in df.iterrows():
-            select(row, funmap)
+            dict = select(row, funmap)
+            if any(dict.values()):
+                print(dict)
 
 
 if __name__ == "__main__":

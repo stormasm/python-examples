@@ -20,6 +20,13 @@ end = {
 }
 
 
+def get_param_for_symbol(param, ary):
+    for dict in ary:
+        keys = dict.keys()
+        if param in keys:
+            return dict[param]
+
+
 def build_param_ary_for_symbol(symbolary, paramset, start):
     for param in paramset:
         print(param)
@@ -27,6 +34,8 @@ def build_param_ary_for_symbol(symbolary, paramset, start):
             print(symbol)
             ary = start[symbol]
             print(ary)
+            value = get_param_for_symbol(param, ary)
+            print(value)
 
 
 def get_symbolary_paramset(start):

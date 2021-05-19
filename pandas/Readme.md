@@ -1,4 +1,23 @@
 
+### How to get the initial dataset
+
+Data acquisition is driven by [yahoo_fin_examples](https://github.com/stormasm/yahoo_fin_examples)...
+
+Get this repo and run the following two commands...
+
+```
+python getquote.py test
+python getfun.py test
+```
+
+Where the test.txt file is located in the [bluemesa](https://github.com/stormasm/bluemesa/tree/master/config/symbols) repo.  If you want to get a new set of symbols simply edit a symbol file and place it here.
+
+After you have retrieved your data set then you are ready to generate the dataframe for the data.  Simply run the following command:
+
+```
+python selectbuild.py
+```
+
 ### Files that are in use...
 
 ##### concat.py

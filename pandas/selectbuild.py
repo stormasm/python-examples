@@ -29,8 +29,8 @@ def create_intermediate_dict(symbols, dictfileary, funmap):
 
 if __name__ == "__main__":
     pathtop = os.environ["BMTOP"]
-    path1 = pathtop + "/python-examples/data/csv"
-    # path1 = pathtop + "/bluemesa/tmp/fun/in/test"
+    # path1 = pathtop + "/python-examples/data/csv"
+    path1 = pathtop + "/bluemesa/tmp/fun/in/arkk"
     funmap = {
         "cashflow": "Levered Free Cash Flow (ttm)",
         "operatingcashflow": "Operating Cash Flow (ttm)",

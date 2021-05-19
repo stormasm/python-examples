@@ -1,6 +1,8 @@
+from concat import get_symbols_from_filenames, concat
 from dictaryfileread import daryfilereader, get_symbol_from_filename
 from dictdf import process_intermediate_dict
-from concat import get_symbols_from_filenames, concat
+from init import funmap
+
 import argparse
 import os
 import pandas as pd
@@ -41,11 +43,6 @@ if __name__ == "__main__":
     # path1 = pathtop + "/python-examples/data/csv"
 
     path1 = pathtop + "/bluemesa/tmp/fun/in/" + groupname
-    funmap = {
-        "cashflow": "Levered Free Cash Flow (ttm)",
-        "operatingcashflow": "Operating Cash Flow (ttm)",
-        "mcap": "Market Cap",
-    }
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)

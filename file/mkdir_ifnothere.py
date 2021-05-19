@@ -2,6 +2,7 @@
 
 import os
 
+
 def mkdir_ifnothere(parent_dir, dirname):
 
     # check to see that parent_dir exists
@@ -9,7 +10,7 @@ def mkdir_ifnothere(parent_dir, dirname):
 
     mybool = os.path.isdir(parent_dir)
 
-    if (not mybool):
+    if not mybool:
         print("mkdir_ifnothere: parent directory does not exist exiting process")
         exit()
 
@@ -20,11 +21,12 @@ def mkdir_ifnothere(parent_dir, dirname):
     # check to see if dirname exists
     # and if it does then do not create a new directory
 
-    if (not mybool):
+    if not mybool:
         os.mkdir(path)
 
+
 if __name__ == "__main__":
-    path = os.environ['BMTOP']
-    path = path + '/zzz/rick/'
-    mkdir_ifnothere(path,'lives')
-    print('done')
+    path = os.environ["BMTOP"]
+    path = path + "/zzz/rick/"
+    mkdir_ifnothere(path, "lives")
+    print("done")

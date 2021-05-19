@@ -7,10 +7,11 @@ def get_symbols(filename):
     for cnt, line in enumerate(fp):
         symbol = line.strip()
         myset.add(symbol)
-    return(myset)
+    return myset
+
 
 if __name__ == "__main__":
-    path = os.environ['BMTOP']
-    path = path + '/equity-data/symbols/top.txt'
+    path = os.environ["BMTOP"]
+    path = path + "/equity-data/symbols/top.txt"
     mysymbols = get_symbols(path)
     print(mysymbols)

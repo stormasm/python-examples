@@ -10,7 +10,7 @@ import pandas as pd
 
 def select(row, funmap):
     d = {}
-    for param in ["mcap", "cashflow"]:
+    for param in ["mcap", "revenue", "profit", "cashflow"]:
         if row[1] == funmap[param]:
             d[param] = row[2]
     return d

@@ -1,6 +1,7 @@
 from dictaryfileread import daryfilereader, get_symbol_from_filename
 from dictdf import process_intermediate_dict
 from concat import get_symbols_from_filenames, concat
+import argparse
 import os
 import pandas as pd
 
@@ -28,9 +29,18 @@ def create_intermediate_dict(symbols, dictfileary, funmap):
 
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("groupname")
+    args = parser.parse_args()
+    groupname = args.groupname
+
     pathtop = os.environ["BMTOP"]
+
+    # For testing only
     # path1 = pathtop + "/python-examples/data/csv"
-    path1 = pathtop + "/bluemesa/tmp/fun/in/arkk"
+
+    path1 = pathtop + "/bluemesa/tmp/fun/in/" + groupname
     funmap = {
         "cashflow": "Levered Free Cash Flow (ttm)",
         "operatingcashflow": "Operating Cash Flow (ttm)",

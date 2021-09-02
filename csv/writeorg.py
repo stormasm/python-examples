@@ -21,12 +21,29 @@ def process_row(row):
         print(row[2])
 
 
+def write_org(data):
+    with open("organism.csv", "w", newline="") as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=",")
+        spamwriter.writerow(["index"] + ["name"] + ["numproteins"] + ["link"])
+        for row in data:
+            spamwriter.writerow([row[0]] + [row[1]] + [row[2]] + [row[3]])
+
 def read_org():
     with open("organism-orig.csv", newline="") as csvfile:
         orgreader = csv.reader(csvfile, delimiter=",")
         for row in orgreader:
             process_row(row)
 
+def write_test():
+    arr = []
+    a1 = ["1", "2", "3", "4"]
+    arr.append(a1)
+    a2 = ["11", "12", "13", "14"]
+    arr.append(a2)
+    a3 = ["21", "22", "23", "24"]
+    arr.append(a3)
+    write_org(arr)
 
 if __name__ == "__main__":
-    read_org()
+    #read_org()
+    write_test()

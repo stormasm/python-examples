@@ -21,10 +21,10 @@ def get_name_and_number(input):
     # print(m.group('x3'))
     r1 = m.group("x1") + " " + m.group("x2")
     r2 = m.group("x4")
-    print(r1)
-    print(r2)
+    # print(r1)
+    # print(r2)
     mytuple = (r1, r2)
-    print(mytuple)
+    # print(mytuple)
     return mytuple
 
 

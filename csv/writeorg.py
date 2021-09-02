@@ -16,9 +16,7 @@ def get_name_and_number(input):
 
 def process_row(row):
     result = get_name_and_number(row[1])
-    if result != None:
-        print(result)
-        print(row[2])
+    return result
 
 
 def write_org(data):
@@ -28,11 +26,20 @@ def write_org(data):
         for row in data:
             spamwriter.writerow([row[0]] + [row[1]] + [row[2]] + [row[3]])
 
+
 def read_org():
     with open("organism-orig.csv", newline="") as csvfile:
         orgreader = csv.reader(csvfile, delimiter=",")
+        arr = []
+        count = 0
         for row in orgreader:
-            process_row(row)
+            value = process_row(row)
+            if value != None:
+                ary = [str(count), value[0], value[1], row[2]]
+                arr.append(ary)
+                count += 1
+        return arr
+
 
 def write_test():
     arr = []
@@ -44,6 +51,7 @@ def write_test():
     arr.append(a3)
     write_org(arr)
 
+
 if __name__ == "__main__":
-    #read_org()
-    write_test()
+    ary = read_org()
+    write_org(ary)

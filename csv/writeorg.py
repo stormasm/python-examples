@@ -18,6 +18,7 @@ def process_row(row):
     result = get_name_and_number(row[1])
     if result != None:
         print(result)
+        print(row[2])
 
 
 def read_org():

@@ -3,13 +3,11 @@ import re
 
 
 def get_name_and_number(input):
-    m = re.match(
-        r"(?P<x0>Organism) (?P<x1>\w+) (?P<x2>\w+) (?P<x3>has) (?P<x4>\d+)", input
-    )
+    m = re.match(r"(?P<x0>Organism) (?P<x1>.*) (?P<x2>has) (?P<x3>\d+)", input)
     if m == None:
         return None
-    r1 = m.group("x1") + " " + m.group("x2")
-    r2 = m.group("x4")
+    r1 = m.group("x1")
+    r2 = m.group("x3")
     mytuple = (r1, r2)
     return mytuple
 

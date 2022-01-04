@@ -43,6 +43,7 @@ if __name__ == "__main__":
     # path1 = pathtop + "/python-examples/data/csv"
 
     path1 = pathtop + "/bluemesa/tmp/fun/in/" + groupname
+    pathout = pathtop + "/bluemesa/tmp/fun/out/" + groupname + ".csv"
     files = os.listdir(path1)
     symbols = get_symbols_from_filenames(files)
     dictfileary = daryfilereader(path1, files)
@@ -52,3 +53,5 @@ if __name__ == "__main__":
     df = pd.DataFrame(d)
     pd.set_option("display.max_rows", None)
     print(df)
+    df.to_csv(pathout)
+    print("\nWrote file to ->", pathout)

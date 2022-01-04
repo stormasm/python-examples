@@ -9,8 +9,10 @@ import pandas as pd
 
 
 def remove_cruft(df):
-    for ind in df.index:
-        print(df["grossprofit"][ind], df["profitmargin"][ind])
+    #    for ind in df.index:
+    #        print(df["grossprofit"][ind], df["profitmargin"][ind])
+    for col in df.columns:
+        print(col)
 
 
 if __name__ == "__main__":

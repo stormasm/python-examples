@@ -3,11 +3,43 @@ import os
 import pandas as pd
 
 
+def deal_with_million_billion_trillion(val):
+    result = 2.0
+    return result
+
+
+def deal_with_percentage_sign(val):
+    result = 1.0
+    return result
+
+
+def process_type(type, val):
+    print(type)
+    print(val)
+    if type == "operatingmargin":
+        result = deal_with_percentage_sign(val)
+        return result
+    elif type == "profitmargin":
+        result = deal_with_percentage_sign(val)
+        return result
+    else:
+        result = deal_with_million_billion_trillion(val)
+        return result
+    other = 123456.7
+    return other
+
+
+def process_cruft(type, val):
+    result = process_type(type, val)
+    # result = 1.0
+    return result
+
+
 def remove_cruft(df):
     for ind in df.index:
         for col in df.columns:
-            print(df[col][ind])
-            df[col][ind] = 1.0
+            result = process_cruft(col, df[col][ind])
+            df[col][ind] = result
     return df
 
 

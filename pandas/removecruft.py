@@ -8,11 +8,23 @@ import os
 import pandas as pd
 
 
-def remove_cruft(df):
+def remove_cruft_1(df):
     #    for ind in df.index:
     #        print(df["grossprofit"][ind], df["profitmargin"][ind])
     for col in df.columns:
+        print(df[col])
+    for ind in df.index:
+        print(ind)
+
+
+def remove_cruft(df):
+    for col in df.columns:
         print(col)
+
+
+def remove_cruft_3(df):
+    for ind in df.index:
+        print(df.loc[ind])
 
 
 if __name__ == "__main__":

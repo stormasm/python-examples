@@ -31,7 +31,6 @@ def process_type(type, val):
 
 def process_cruft(type, val):
     result = process_type(type, val)
-    # result = 1.0
     return result
 
 

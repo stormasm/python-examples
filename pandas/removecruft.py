@@ -18,6 +18,15 @@ def remove_cruft_1(df):
 
 
 def remove_cruft(df):
+    #    for ind in df.index:
+    #        print(df["grossprofit"][ind], df["profitmargin"][ind])
+
+    for ind in df.index:
+        for col in df.columns:
+            print(df[col][ind])
+
+
+def remove_cruft4(df):
     for col in df.columns:
         print(col)
 

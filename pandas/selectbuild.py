@@ -2,6 +2,7 @@ from concat import get_symbols_from_filenames, concat
 from dictaryfileread import daryfilereader, get_symbol_from_filename
 from dictdf import process_intermediate_dict
 from init import funmap
+from removecruft import remove_cruft
 
 import argparse
 import os
@@ -52,6 +53,7 @@ if __name__ == "__main__":
     d = process_intermediate_dict(idict)
     df = pd.DataFrame(d)
     pd.set_option("display.max_rows", None)
+    df = remove_cruft(df)
     print(df)
     df.to_csv(pathout)
     print("\nWrote file to ->", pathout)

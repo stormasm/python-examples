@@ -24,6 +24,10 @@ python selectbuild.py
 
 This shows what the data looks like in a dataframe coming out of the test files
 
+##### removecruft.py
+
+This removes the percentage sign % from profitmargin and operatingmargin as well as the T, B, M from mcap, revenue, and grossprofit.
+
 ##### selectbuild.py
 
 This is the file that processes the dicts and dataframes and generates

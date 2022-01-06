@@ -50,6 +50,8 @@ if __name__ == "__main__":
     groupname = args.groupname
     pathtop = os.environ["BMTOP"]
     filename = pathtop + "/bluemesa/tmp/fun/out/" + groupname + ".csv"
-    df = pd.read_csv(filename)
+    # magic bullet to remove Unnamed: 0 as the first column name
+    # https://stackoverflow.com/questions/26098710/rename-unnamed-column-pandas-dataframe/54617685
+    df = pd.read_csv(filename, index_col=0)
     df = remove_cruft(df)
     print(df)

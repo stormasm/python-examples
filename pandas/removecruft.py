@@ -17,8 +17,6 @@ def deal_with_percentage_sign(val):
 
 
 def process_type(type, val):
-    print(type)
-    print(val)
     if type == "operatingmargin":
         result = deal_with_percentage_sign(val)
         return result

@@ -1,15 +1,18 @@
 import argparse
 import os
 import pandas as pd
+import re
 
 
 def deal_with_million_billion_trillion(val):
-    result = 2.0
+    pattern = r"B"
+    result = re.sub(pattern, "", val)
     return result
 
 
 def deal_with_percentage_sign(val):
-    result = 1.0
+    pattern = r"%"
+    result = re.sub(pattern, "", val)
     return result
 
 

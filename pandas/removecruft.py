@@ -5,8 +5,17 @@ import re
 
 
 def deal_with_million_billion_trillion(val):
-    pattern = r"B"
-    result = re.sub(pattern, "", val)
+    patternB = r"B"
+    patternM = r"M"
+
+    if patternB in val:
+        result = re.sub(patternB, "", val)
+    elif patternM in val:
+        result = re.sub(patternM, "", val)
+        result = float(result) / 1000
+    else:
+        result = val
+    print(val, result)
     return result
 
 

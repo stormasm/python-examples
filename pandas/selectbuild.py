@@ -54,6 +54,8 @@ if __name__ == "__main__":
     df = pd.DataFrame(d)
     pd.set_option("display.max_rows", None)
     df = remove_cruft(df)
+    # add in a column name for the index column
+    df.index.rename("symbol", inplace=True)
     print(df)
     df.to_csv(pathout)
     print("\nWrote file to ->", pathout)

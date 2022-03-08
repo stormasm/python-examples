@@ -1,3 +1,5 @@
+# https://www.tutorialspoint.com/python_pandas/python_pandas_groupby.htm
+
 # import the pandas library
 import pandas as pd
 
@@ -8,7 +10,7 @@ ipl_data = {
         "Devils",
         "Devils",
         "Kings",
-        "kings",
+        "Kings",
         "Kings",
         "Kings",
         "Riders",
@@ -23,3 +25,4 @@ ipl_data = {
 df = pd.DataFrame(ipl_data)
 
 print(df)
+print(df.groupby("Team").groups)

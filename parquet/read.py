@@ -1,4 +1,16 @@
+import argparse
 import pyarrow.parquet as pq
 
-table = pq.read_table("ex00.parquet")
-print(table.to_pandas())
+
+def readfile(filename):
+    table = pq.read_table(filename)
+    print(table.to_pandas())
+
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename", default="ex00.parquet")
+    args = parser.parse_args()
+    filename = args.filename
+    readfile(filename)

@@ -18,7 +18,7 @@ network = pylast.LastFMNetwork(
 
 ## SESSION_KEY_FILE = os.path.join(os.path.expanduser("~"), ".session_key")
 
-SESSION_KEY_FILE = "mysessionkey"
+SESSION_KEY_FILE = "mysessionkey.txt"
 
 skg = pylast.SessionKeyGenerator(network)
 url = skg.get_web_auth_url()
